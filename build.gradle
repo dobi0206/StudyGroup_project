@@ -31,3 +31,5 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// 초기 spring security 설정 필요
