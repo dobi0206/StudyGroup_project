@@ -8,12 +8,12 @@
 
     <%@ include file = "/WEB-INF/views/common/header.jsp" %>
 
-<div class = "content">
+    <div class = "content">
 
-    <h2>title</h2>
+    <h2>홈 화면 - 게시글</h2>
     <br>
 
-</div>
+    </div>
 
     <%@ include file = "/WEB-INF/views/common/footer.jsp" %>
 

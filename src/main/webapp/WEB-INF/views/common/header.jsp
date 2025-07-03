@@ -9,28 +9,27 @@
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0" >
             <a href="${pageContext.request.contextPath}/" class="d-inline-flex link-body-emphasis text-decoration-none">
-            IF_Study_Group
+                <img src="/resources/images/IF_logo.png" alt="IF Study Group 로고" class="img-fluid navbar-logo">
             </a>
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-                <a href="#" class="nav-link px-2 link-secondary">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"> Home
-                        </font></font></a></li>
+                <a href="${pageContext.request.contextPath}/" class="nav-link px-2">
+                         Home
+                        </a></li>
             <li>
-                <a href="/memberPage" class="nav-link px-2"><font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Member
-                    </font></font></a></li>
+                <a href="${pageContext.request.contextPath}/memberPage" class="nav-link px-2">
+                    Member
+                    </a></li>
             <li>
-                <a href="projectPage" class="nav-link px-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Project
-                </font></font></a></li>
+                <a href="${pageContext.request.contextPath}/projectPage" class="nav-link px-2">Project
+                </a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">로그인</font></font></button>
-            <button type="button" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">가입하기</font></font></button>
+            <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/loginPage'">로그인</button>
+            <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/registerPage'">가입하기</button>
         </div>
     </header>
 </body>
