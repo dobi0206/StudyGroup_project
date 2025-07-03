@@ -1,14 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href = "/resources/css/common.css">
 </head>
 <body>
-<div>
 
-    <h2>테스트 파일</h2>
+    <%@ include file = "/WEB-INF/views/common/header.jsp" %>
+
+<div class = "content">
+
+    <h2>title</h2>
+    <br>
 
 </div>
+
+    <%@ include file = "/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>
