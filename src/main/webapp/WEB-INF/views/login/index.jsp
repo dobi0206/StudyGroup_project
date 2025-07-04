@@ -12,23 +12,23 @@
 
     <div class="main-wrapper">
         <main class="form-signin">
-            <form>
+            <form action = "${pageContext.request.contextPath}/login" method = "post">
                 <img class="mb-4 logo-img" src="/resources/images/IF_logo.png" alt="IF Study Group 로고">
                 <h1 class="h3 mb-3 fw-normal">로그인</h1>
 
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="이름@example.com">
+                    <input type="text" class="form-control" id="userID" name = "userID" placeholder="아이디">
                     <label for="floatingInput">아이디</label>
                 </div>
 
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="비밀번호">
+                    <input type="password" class="form-control" id="password" name ="password" placeholder="비밀번호">
                     <label for="floatingPassword">비밀번호</label>
                 </div>
                 <div id = "register-link">
                 <a href = "${pageContext.request.contextPath}/registerPage"> 회원가입</a>
                 </div>
-                <button class="btn btn-primary w-100 py-2" type="submit">로그인</button>
+                <button class="btn btn-primary w-100 py-2" type="submit" id = "login-button">로그인</button>
             </form>
         </main>
     </div>
