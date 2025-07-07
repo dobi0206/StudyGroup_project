@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -37,9 +39,9 @@ public class SecurityConfig {
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(authz->authz.requestMatchers("/","/loginPage","/logout","/noticeCheckPage","/registerPage","/menu/all","/projectPage")
                         .permitAll()
-                        .requestMatchers(HttpMethod.POST,"/loginPage").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/login","/register").permitAll()
                         .requestMatchers("/resources/**","/WEB-INF/**").permitAll()
-                        .requestMatchers("/noticerAdd","/noticeModifypage").hasAnyAuthority("MANAGER")
+                        .requestMatchers("/noticeAdd","/noticeModifypage").hasAnyAuthority("MANAGER")
                         .requestMatchers(HttpMethod.POST,"/menu/add").hasAnyAuthority("MANAGER")
                         .requestMatchers(HttpMethod.POST,"/menu/update").hasAnyAuthority("MANAGER")
                         .requestMatchers(HttpMethod.POST,"/menu/delete").hasAnyAuthority("MANAGER")
@@ -53,6 +55,7 @@ public class SecurityConfig {
                         .failureUrl("/loginPage?error=true")
                         .usernameParameter("userID") // input 태그의 name
                         .passwordParameter("password") // input 태그의 name + input 태그의 name과 id의 차이점 알아보기
+                        // id -> 고유한 식별 목적 , class -> css쿼리문 및 재사용 목적, name -> form 컨트롤러 요소의 값을 서버로 전송하기 위해 필요한 속성
                         .successHandler(authenticationSuccessHandler())
                         .permitAll()
                         )
@@ -68,6 +71,15 @@ public class SecurityConfig {
         return http.build();
 
     }
+
+    // 패스워드 암호화
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+
+
 
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler(){

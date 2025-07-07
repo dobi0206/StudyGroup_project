@@ -19,7 +19,8 @@
                             <div class="card-body">
                                 <p class="card-text"> 프로젝트명 : 동아리 소개 웹 페이지 개발</p>
                                 <p class="card-text"> 기간 : 2023.03 ~ 2023.07</p>
-                                <p class="card-text"> URL : https://github.com/dobi0206/StudyGroup_project </p>
+                                <p class="card-text">
+                                    <a href = "https://github.com/dobi0206/StudyGroup_project">URL : https://github.com/dobi0206/StudyGroup_project</a></p>
                             </div>
                         </div>
                     </div>

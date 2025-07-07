@@ -12,25 +12,32 @@
 
 <div class="main-wrapper">
     <main class="form-signin">
-        <form>
+        <form action = "${pageContext.request.contextPath}/register" method = "post">
+
+            <!--csrf 토큰 추가-->
+            <input type="hidden" name="_csrf" value = "${_csrf.token}">
+
             <img class="mb-4 logo-img" src="/resources/images/IF_logo.png" alt="IF Study Group 로고">
+
             <h1 class="h3 mb-3 fw-normal">회원가입</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="이름@example.com">
+                <input type="text" class="form-control" id="floatingInput" name = "username" placeholder="이름">
                 <label for="floatingInput">이름</label>
             </div>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="이름@example.com">
+                <input type="text" class="form-control" id="floatingInput" name = "userID" placeholder="아이디">
                 <label for="floatingInput">아이디</label>
             </div>
 
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="비밀번호">
+                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="비밀번호">
                 <label for="floatingPassword">비밀번호</label>
             </div>
-            <button class="btn btn-primary w-100 py-2" type="submit">완료</button>
+
+            <button class="btn btn-primary w-100 py-2" type="submit">가입하기</button>
+
         </form>
     </main>
 </div>

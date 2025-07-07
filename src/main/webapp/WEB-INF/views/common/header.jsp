@@ -27,10 +27,24 @@
                 </a></li>
         </ul>
 
-        <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/loginPage'">로그인</button>
-            <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/registerPage'">가입하기</button>
-        </div>
+
+
+        <c:choose>
+
+            <c:when test="${isAuthenticated != null && isAuthenticated == true}">
+                <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
+                </div>
+            </c:when>
+
+            <c:otherwise>
+                <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/loginPage'">로그인</button>
+                <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/registerPage'">가입하기</button>
+                </div>
+            </c:otherwise>
+
+        </c:choose>
     </header>
 </body>
 </html>
