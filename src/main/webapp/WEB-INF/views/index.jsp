@@ -3,11 +3,11 @@
 <html>
 <head>
 
-    <meta name = "_csrf" content=""${_csrf.token}">
+    <meta name = "_csrf" content=${_csrf.token}">
     <meta name = "_csrf_header" content="${_csrf.headerName}">
 
-    <link rel="stylesheet" href = "/resources/css/common.css">
-    <link rel="stylesheet" href = "/resources/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href = "/resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href = "/resources/css/bootstrap.css">
 
 </head>
 <body>
@@ -20,7 +20,7 @@
             <br>
 
             <c:if test = "${MANAGER == true}">
-                <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/noticeAdd'">게시글 작성</button>
+                <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='${pageContext.request.contextPath}/noticeAddPage'">게시글 작성</button>
             </c:if>
 
             <div id ="noticeList">

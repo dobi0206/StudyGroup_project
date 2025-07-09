@@ -21,7 +21,7 @@ public interface NoticeRestMapper {
     @Update("UPDATE study_group.notice SET title=#{title}, content=#{content},userID=#{userID} WHERE idx=#{idx}")
     public void boardUpdate(Notice notice);
 
-    @Update("UPDATE study_group.notice SET count=count+1 WHERE idx=#{idx}")
+    @Update("UPDATE study_group.notice SET count = count + 1 WHERE idx = #{idx}")
     public void boardCount(int idx);
 
     @Delete("DELETE FROM study_group.notice WHERE idx=#{idx}")

@@ -8,7 +8,7 @@ public class CusotmUser extends org.springframework.security.core.userdetails.Us
     private User user;
 
     public CusotmUser(User user){
-        super(user.getUsername(), user.getPassword(), AuthorityUtils.createAuthorityList(user.getRole().toString()));
+        super(user.getUserID(), user.getPassword(), AuthorityUtils.createAuthorityList(user.getRole().toString()));
     }
 
 }

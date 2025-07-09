@@ -11,7 +11,8 @@ import java.util.List;
 public class NoticeRestService {
 
     @Autowired
-    private NoticeRestMapper noticeRestMapper;
+    NoticeRestMapper noticeRestMapper; //클래스명 그대로 NoticeRestMapper 적용해서 오류가 발생했었음.... 다음에는 더 잘 볼것..
+
 
     // 게시글 가져오는 메소드
     public List<Notice>getLists(){
@@ -25,22 +26,22 @@ public class NoticeRestService {
 
     // 특정 게시글 내용 가져오는 메소드
     public Notice boardContent(int idx){
-        return NoticeRestMapper.boardContent(idx);
+        return noticeRestMapper.boardContent(idx);
     }
 
     // 특정 게시글 삭제
     public void boardDelete(int idx){
-        NoticeRestMapper.boardDelete(idx);
+        noticeRestMapper.boardDelete(idx);
     }
 
     // 특정 게시글 수정
     public void boardUpdate(Notice notice){
-        NoticeRestMapper.boardUpdate(notice);
+        noticeRestMapper.boardUpdate(notice);
     }
 
     // 게시글 조회수 증가 메소드
     public void boardCount(int idx){
-        NoticeRestMapper.boardCount(idx);
+        noticeRestMapper.boardCount(idx);
     }
 
 }
